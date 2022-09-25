@@ -1,0 +1,260 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>MMORPG游戏主程应该掌握的技术 | schao</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="编程语言，这个很容易理解，是程序的基础。常用的静态语言，C++、C#、Go常用的动态语言，Lua、Python然后因为通常游戏开发需要多种语言配合，所以还需要混合编程的概念和技巧。这其中每种语言的语法和特性需要了解之外，一般会涉及到内存管理。 编程规范同样无需多言，作为主程，需要制定团队的编程规范，并且需要借助LuaCheck等静态检查等工具让规范可以更好的执行和保证。 编程范式这块我认为包含两">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MMORPG游戏主程应该掌握的技术">
+<meta property="og:url" content="http://example.com/2022/09/25/MMORPG%E6%B8%B8%E6%88%8F%E4%B8%BB%E7%A8%8B%E5%BA%94%E8%AF%A5%E6%8E%8C%E6%8F%A1%E7%9A%84%E6%8A%80%E6%9C%AF/index.html">
+<meta property="og:site_name" content="schao">
+<meta property="og:description" content="编程语言，这个很容易理解，是程序的基础。常用的静态语言，C++、C#、Go常用的动态语言，Lua、Python然后因为通常游戏开发需要多种语言配合，所以还需要混合编程的概念和技巧。这其中每种语言的语法和特性需要了解之外，一般会涉及到内存管理。 编程规范同样无需多言，作为主程，需要制定团队的编程规范，并且需要借助LuaCheck等静态检查等工具让规范可以更好的执行和保证。 编程范式这块我认为包含两">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<meta property="article:published_time" content="2022-09-25T15:10:53.000Z">
+<meta property="article:modified_time" content="2022-09-25T15:11:28.766Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/09/25/MMORPG%E6%B8%B8%E6%88%8F%E4%B8%BB%E7%A8%8B%E5%BA%94%E8%AF%A5%E6%8E%8C%E6%8F%A1%E7%9A%84%E6%8A%80%E6%9C%AF/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'MMORPG游戏主程应该掌握的技术',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-09-25 23:11:28'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">schao</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">MMORPG游戏主程应该掌握的技术</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-09-25T15:10:53.000Z" title="发表于 2022-09-25 23:10:53">2022-09-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-09-25T15:11:28.766Z" title="更新于 2022-09-25 23:11:28">2022-09-25</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="MMORPG游戏主程应该掌握的技术"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><ol>
+<li><strong>编程语言</strong>，这个很容易理解，是程序的基础。<br>常用的静态语言，C++、C#、Go<br>常用的动态语言，Lua、Python<br>然后因为通常游戏开发需要多种语言配合，所以还需要<strong>混合编程</strong>的概念和技巧。<br>这其中每种语言的语法和特性需要了解之外，一般会涉及到内存管理。</li>
+<li><strong>编程规范</strong><br>同样无需多言，作为主程，需要制定团队的编程规范，并且需要借助LuaCheck等静态检查等工具让规范可以更好的执行和保证。</li>
+<li><strong>编程范式</strong><br>这块我认为包含两大部分，一块是搭建整个GamePlay框架的框架方式，传统Entity继承、组件化、ECS是三种比较常规的；还有一块就是设计模式以及他们的应用。</li>
+<li><strong>数据结构与算法，以及三维数学</strong><br>默认是3D游戏，这块的基础只是还是需要的。</li>
+<li><strong>游戏引擎</strong><br>要有自己熟悉和掌握的游戏引擎，包括客户端与服务端。</li>
+<li><strong>GamePlay基础</strong><br>除了前面提到的编程范式之外，GamePlay还有很多内容：</li>
+</ol>
+<ul>
+<li>3C</li>
+<li>游戏状态管理</li>
+<li>常规的技能结构等等</li>
+</ul>
+<ol>
+<li><strong>物理系统</strong><br>如何设计碰撞检测、玩家控制、车辆系统、布娃娃、柔体效果</li>
+<li><strong>动画系统</strong><br>骨骼动画原理、，蒙皮的基本概念、动作融合、Rootmotion、动画重定向、角色模型和动作制作规范等等</li>
+<li><strong>特效系统</strong></li>
+<li><strong>渲染</strong></li>
+</ol>
+<ul>
+<li>了解基本的渲染管线</li>
+<li>熟悉PBR</li>
+<li>了解非真实渲染</li>
+<li>各种后处理效果</li>
+</ul>
+<ol>
+<li><strong>音频技术</strong></li>
+</ol>
+<ul>
+<li>FMod、wwise、引擎自带音频功能的使用</li>
+<li>材质音效区分、P1/P3区分</li>
+<li>混音回响等功能支持</li>
+</ul>
+<ol>
+<li><strong>大世界场景制作和管理流程</strong><br>如果是MMORPG，很可能需要大世界制作的技术，基于World Mashine、Houdini等PCG的生产管线如何建立，如何支持场景同时编辑，如何解决大世界的场景资源加卸载管理、超远视距的阴影如何实现、昼夜天气系统、HLOD……</li>
+<li><strong>性能优化</strong><br>常规的性能优化方式、以及如何持续监控发现性能问题并寻找方案解决，这里又包含CPU、GPU、带宽、内存、磁盘空间等等方面。</li>
+<li><strong>游戏更新机制</strong></li>
+</ol>
+<ul>
+<li>客户端Patch系统</li>
+<li>服务器热更新</li>
+<li>客户端代码的Hotfix</li>
+</ul>
+<ol>
+<li><strong>网络</strong></li>
+</ol>
+<ul>
+<li>通讯协议如何定义</li>
+<li>优化网络流量</li>
+<li>优化弱网下的游戏表现</li>
+<li>加密</li>
+<li>限流</li>
+</ul>
+<ol>
+<li><strong>服务器存储</strong><br>MySQL和Mongo等常规数据库的使用</li>
+<li><strong>游戏AI</strong></li>
+</ol>
+<ul>
+<li>可能在客户端或者服务端，需要提供便利的编辑能力</li>
+<li>基于深度学习的AI方案</li>
+</ul>
+<ol>
+<li><strong>服务器稳定与安全</strong></li>
+</ol>
+<ul>
+<li>并发安全</li>
+<li>进程监控</li>
+<li>常规的运维知识</li>
+<li>负载均衡</li>
+</ul>
+<ol>
+<li><strong>常规的服务器技术</strong></li>
+</ol>
+<ul>
+<li>AOI管理</li>
+<li>服务端物理</li>
+<li>体素</li>
+<li>同步方案</li>
+</ul>
+<ol>
+<li><strong>IDE与调试工具</strong><br>常用的VS Code、Visual Studio等IDE，以及对应开发模式下的相应调试工具。</li>
+<li><strong>版本管理软件</strong></li>
+<li><strong>编辑器开发</strong></li>
+</ol>
+<p>随手列，有些凌乱，一些技术内容本身就很复杂，继续拆分可以做得很细，比如3C里面，如何做到主机级别的体验，就不是一个人能搞透彻的。<br>当然，肯定不止我列举的这些技术点，还有很多其他的，和游戏类型相关的技术内容。<br>对于一款MMORPG项目的主程，我认为合格的标准是起码了解上面列举的80%以上的技术内容，当然每个人都要自己擅长的领域，只要有足够的学习能力，能找到合适的人，技术上的内容都可以学习和弥补。只是主程本身就是要为项目的技术问题兜底，并要做技术方案的决策，因此对于技术宽度还是有较高要求的。</p>
+<p>我自己的体验是，主程工作中，能有30%-40%的代码时间就很难得了，通常的工作是一天的沟通和会议……所以，主程的眼中，要有“事情”，更要有“人”——如何保持团队活力，如何激发团队战斗力等等，都是技术之外需要思考的难题。</p>
+<p>=======================================================================================</p>
+<ol>
+<li><p>技术方面</p>
+<ol>
+<li>首先得是一个高级或者资深Unity开发, 掌握不错的软件开发及计算机相关基础知识</li>
+<li>Unity使用比较熟悉, 大的模块使用以及底层原理有一定的了解, 比如动作, 特效, GUI, Avatar, 场景, Timeline, 资源管理等等.</li>
+<li>有一定的MMO开发经验, 知道MMO游戏里面常见的概念以及实现方案, 比如场景, 位面, 分线, AOI, 属性同步, AI, Entity, 技能, buff, 体素等等.</li>
+<li>了解常用的性能优化工具, 优化方案</li>
+<li>不断拓展技术视野, 对技术方案的选型, 决策会有帮助</li>
+</ol>
+</li>
+<li><p>管理方面</p>
+<ol>
+<li>制定落地代码规范, 了解什么样的代码规范是好的规范, 适合项目的规范</li>
+<li>制定落地资源规范, 能根据项目需求, 以及性能预算制定美术同学认可的资源规范, 并提供流程和工具帮助他们落地</li>
+<li>制定并不断优化开发流程, 提升产出效率</li>
+<li>涉及的技术方面很多, 一个人的精力毕竟有限, 很难面面俱到, 所以招人, 识人, 用人, 找正确的人做正确的事也很重要.</li>
+<li>如果是从纯技术岗升上来, 一些基本的管理可能建议也要了解一些.</li>
+</ol>
+</li>
+<li><p>产品方面<br>不是硬性要求, 但是建议自己项目同品类的竞品游戏, 能有一定程度的游戏体验</p>
+<ol>
+<li>了解游戏里面的常见玩法</li>
+<li>体验游戏里面不同层级玩家的感受, 了解他们的需求</li>
+<li>了解这类游戏需要做的技术突破点有哪些</li>
+</ol>
+<p>这样跟策划, 产品沟通需求, 讨论优化方案, 比较容易达成一致, 会高效很多.<br>比如题主提到的MMORPG类型, 目前 天涯明月刀, 天谕, 倩女幽魂, 一梦江湖 等都是可以体验一下</p>
+</li>
+</ol>
+<p>最后, 我觉得一个好的心态也很重要. 一个项目开发过程中, 会有困难, 挫折, 甚至失败, 遇到这些情况, 保持正向积极的心态, 同时给组员正向的影响, 从而给大家信心, 带领大家取得更好的成果.</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/09/25/MMORPG%E6%B8%B8%E6%88%8F%E4%B8%BB%E7%A8%8B%E5%BA%94%E8%AF%A5%E6%8E%8C%E6%8F%A1%E7%9A%84%E6%8A%80%E6%9C%AF/">http://example.com/2022/09/25/MMORPG%E6%B8%B8%E6%88%8F%E4%B8%BB%E7%A8%8B%E5%BA%94%E8%AF%A5%E6%8E%8C%E6%8F%A1%E7%9A%84%E6%8A%80%E6%9C%AF/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">schao</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/09/25/MMORPG%E6%B8%B8%E6%88%8F%E4%B8%BB%E7%A8%8B%E5%BA%94%E8%AF%A5%E6%8E%8C%E6%8F%A1%E7%9A%84%E6%8A%80%E6%9C%AF/" title="MMORPG游戏主程应该掌握的技术"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MMORPG游戏主程应该掌握的技术"/></a><div class="content"><a class="title" href="/2022/09/25/MMORPG%E6%B8%B8%E6%88%8F%E4%B8%BB%E7%A8%8B%E5%BA%94%E8%AF%A5%E6%8E%8C%E6%8F%A1%E7%9A%84%E6%8A%80%E6%9C%AF/" title="MMORPG游戏主程应该掌握的技术">MMORPG游戏主程应该掌握的技术</a><time datetime="2022-09-25T15:10:53.000Z" title="发表于 2022-09-25 23:10:53">2022-09-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By John Doe</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
